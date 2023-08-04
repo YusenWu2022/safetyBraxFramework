@@ -1,0 +1,55 @@
+default:
+  # the random seed
+  seed: 10
+  # the number of parallel environments
+  num_envs: 16
+  # the maximum length of an episode
+  max_episode_length: 1000
+
+  # *------------------------------- training -------------------------------* #
+  # number of epochs
+  num_epochs: 1400
+  # number of training steps per epoch to roll out training batch, may be different for different agent and envs 
+  num_training_steps_per_epoch: 100 # make sure num_training_steps_per_epoch * short_horizon = max_episode_length   
+  # evaluation frequency
+  eval_frequency: 1
+
+  # learning rate for the optimizer
+  learning_rate: 0.001  # test 0.005 to learn faster; or 0.001 still
+  # short horizon to compute the gradient
+  short_horizon: 10   # episode_length / num_training_steps_per_epoch; get accurate value
+  # the maximum norm of the gradient for clipping
+  max_grad_norm: 10.0
+
+  # number of updates using the same batch
+  num_updates_per_step: 4
+  # size of each minibatch
+  minibatch_size: 2
+  # reward scaling
+  reward_scaling: 10.0
+  # gae lambda
+  gae_lambda: 0.95
+  # discounting factor
+  discount_gamma: 0.99
+
+  # delta used in computing optimization items   
+  delta: 1.0      # ball: 0.01   # calculate delta for each agent, for ant and drone influence not obvious
+
+  # cost constraint 
+  threshold: 200.0
+
+  # *----------------------------- actor network ----------------------------* #
+  actor_config:
+    # the hidden layer sizes for the actor network
+    hidden_layer_sizes: [64, 64]
+    # the activation function for the actor network
+    activation: relu
+
+  # *---------------------------- critic network ----------------------------* #
+  critic_config:
+    # the hidden layer sizes for the critic network
+    hidden_layer_sizes: [64, 64]
+    # the activation function for the critic network
+    activation: relu
+
+

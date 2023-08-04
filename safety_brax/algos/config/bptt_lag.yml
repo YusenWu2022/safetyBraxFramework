@@ -1,0 +1,35 @@
+default:
+
+    # lagrangian 
+  lagrangian_multiplier: 0.000
+  lagrangian_learning: 0.01
+  cost_limit_grad: 0.25
+  multiplier_lr: 0.01
+  threshold: 200.0
+  
+  # the random seed
+  seed: 10
+  # the number of parallel environments
+  num_envs: 16
+  # the maximum length of an episode
+  max_episode_length: 1000
+
+  # *------------------------------- training -------------------------------* #
+  # learning rate for the optimizer
+  learning_rate: 0.001
+  # the truncation length of computing the gradient
+  truncation_length: 64
+  # the maximum norm of the gradient for clipping
+  max_grad_norm: 10
+
+  # number of epochs
+  num_epochs: 500
+  # evaluation frequency
+  eval_frequency: 1
+
+  # *----------------------------- actor network ----------------------------* #
+  actor_config:
+    # the hidden layer sizes for the actor network
+    hidden_layer_sizes: [64, 64]
+    # the activation function for the actor network
+    activation: relu

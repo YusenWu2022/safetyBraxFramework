@@ -1,0 +1,31 @@
+default:
+  # the random seed
+  seed: 0
+  # the number of parallel environments
+  num_envs: 8
+  # the maximum length of an episode
+  max_episode_length: 500
+
+  # *------------------------------- training -------------------------------* #
+  # learning rate for the optimizer
+  learning_rate: 0.001
+  # the truncation length of computing the gradient
+  truncation_length: 64
+  # the maximum norm of the gradient for clipping
+  max_grad_norm: 10000
+
+  # number of epochs
+  num_epochs: 50
+  # evaluation frequency
+  eval_frequency: 1
+
+  normalize: false
+
+  # *----------------------------- actor network ----------------------------* #
+  actor_config:
+    # the hidden layer sizes for the actor network
+    hidden_layer_sizes: [64, 64]
+    # the activation function for the actor network
+    activation: relu
+
+  

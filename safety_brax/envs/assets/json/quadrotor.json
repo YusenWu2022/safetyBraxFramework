@@ -1,0 +1,178 @@
+{
+    "bodies": [
+        {
+            "name": "frame",
+            "colliders": [
+                {
+                    "sphere":{
+                        "radius": 0.2
+                    },
+                    "color": "blue"
+                }
+            ],
+            "inertia": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "mass": 10.0
+        },
+        {
+            "name": "propeller_1",
+            "colliders": [
+                {
+                    "sphere":{
+                        "radius": 0.12
+                    },
+                    "color": "black"
+                }
+            ],
+            "inertia": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "mass": 1.0
+        },
+        {
+            "name": "propeller_2",
+            "colliders": [
+                {
+                    "sphere":{
+                        "radius": 0.12
+                    },
+                    "color": "red"
+                }
+            ],
+            "inertia": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "mass": 1.0
+        },
+        {
+            "name": "propeller_3",
+            "colliders": [
+                {
+                    "sphere":{
+                        "radius": 0.12
+                    },
+                    "color": "green"
+                }
+            ],
+            "inertia": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "mass": 1.0
+        },
+        {
+            "name": "propeller_4",
+            "colliders": [
+                {
+                    "sphere":{
+                        "radius": 0.12
+                    },
+                    "color": "yellow"
+                }
+            ],
+            "inertia": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "mass": 1.0
+        }
+    ],
+    "joints": [
+        {
+            "name": "frame2propeller_1",
+            "parent": "frame",
+            "child": "propeller_1",
+            "parentOffset": {},
+            "childOffset": {
+                "x": 0.17,
+                "z": 0.01
+            },
+            "angleLimit": [
+                {
+                    "min": 0.0,
+                    "max": 0.01
+                }
+            ]
+        },
+        {
+            "name": "frame2propeller_2",
+            "parent": "frame",
+            "child": "propeller_2",
+            "childOffset": {
+                "y": -0.17,
+                "z": 0.01
+            },
+            "angleLimit": [
+                {
+                    "min": 0.0,
+                    "max": 0.01
+                }
+            ]
+        },
+        {
+            "name": "frame2propeller_3",
+            "parent": "frame",
+            "child": "propeller_3",
+            "childOffset": {
+                "x": -0.17,
+                "z": 0.01
+            },
+            "angleLimit": [
+                {
+                    "min": 0.0,
+                    "max": 0.01
+                }
+            ]
+        },
+        {
+            "name": "frame2propeller_4",
+            "parent": "frame",
+            "child": "propeller_4",
+            "childOffset": {
+                "y": 0.17,
+                "z": 0.01
+            },
+            "angleLimit": [
+                {
+                    "min": 0.0,
+                    "max": 0.01
+                }
+            ]
+        }
+    ],
+    "forces": [
+        {
+            "name": "motor_1_thruster",
+            "body": "propeller_1",
+            "strength": 40.0,
+            "thruster": {}
+        },
+        {
+            "name": "motor_2_thruster",
+            "body": "propeller_2",
+            "strength": 40.0,
+            "thruster": {}
+        },
+        {
+            "name": "motor_3_thruster",
+            "body": "propeller_3",
+            "strength": 40.0,
+            "thruster": {}
+        },
+        {
+            "name": "motor_4_thruster",
+            "body": "propeller_4",
+            "strength": 40.0,
+            "thruster": {}
+        }
+    ]
+}

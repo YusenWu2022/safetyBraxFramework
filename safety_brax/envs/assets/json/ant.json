@@ -1,0 +1,430 @@
+{
+    "bodies": [
+        {
+            "name": "Torso",
+            "colliders": [
+                {
+                    "capsule": {
+                        "radius": 0.25,
+                        "length": 0.5,
+                        "end": 1
+                    }
+                }
+            ],
+            "inertia": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "mass": 6.0
+        },
+        {
+            "name": "Aux 1",
+            "colliders": [
+                {
+                    "rotation": {
+                        "x": 90.0,
+                        "y": -45.0
+                    },
+                    "capsule": {
+                        "radius": 0.08,
+                        "length": 0.4428427219390869
+                    }
+                }
+            ],
+            "inertia": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "mass": 1.0
+        },
+        {
+            "name": "Foot 1",
+            "colliders": [
+                {
+                    "rotation": {
+                        "x": 90.0,
+                        "y": -45.0
+                    },
+                    "capsule": {
+                        "radius": 0.08,
+                        "length": 0.7256854176521301,
+                        "end": -1
+                    }
+                }
+            ],
+            "inertia": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "mass": 2.0
+        },
+        {
+            "name": "Aux 2",
+            "colliders": [
+                {
+                    "rotation": {
+                        "x": 90.0,
+                        "y": 45.0
+                    },
+                    "capsule": {
+                        "radius": 0.08,
+                        "length": 0.4428427219390869
+                    }
+                }
+            ],
+            "inertia": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "mass": 1.0
+        },
+        {
+            "name": "Foot 2",
+            "colliders": [
+                {
+                    "rotation": {
+                        "x": 90.0,
+                        "y": 45.0
+                    },
+                    "capsule": {
+                        "radius": 0.08,
+                        "length": 0.7256854176521301,
+                        "end": -1
+                    }
+                }
+            ],
+            "inertia": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "mass": 2.0
+        },
+        {
+            "name": "Aux 3",
+            "colliders": [
+                {
+                    "rotation": {
+                        "x": -90.0,
+                        "y": 45.0
+                    },
+                    "capsule": {
+                        "radius": 0.08,
+                        "length": 0.4428427219390869
+                    }
+                }
+            ],
+            "inertia": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "mass": 1.0
+        },
+        {
+            "name": "Foot 3",
+            "colliders": [
+                {
+                    "rotation": {
+                        "x": -90.0,
+                        "y": 45.0
+                    },
+                    "capsule": {
+                        "radius": 0.08,
+                        "length": 0.7256854176521301,
+                        "end": -1
+                    }
+                }
+            ],
+            "inertia": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "mass": 2.0
+        },
+        {
+            "name": "Aux 4",
+            "colliders": [
+                {
+                    "rotation": {
+                        "x": -90.0,
+                        "y": -45.0
+                    },
+                    "capsule": {
+                        "radius": 0.08,
+                        "length": 0.4428427219390869
+                    }
+                }
+            ],
+            "inertia": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "mass": 1.0
+        },
+        {
+            "name": "Foot 4",
+            "colliders": [
+                {
+                    "rotation": {
+                        "x": -90.0,
+                        "y": -45.0
+                    },
+                    "capsule": {
+                        "radius": 0.08,
+                        "length": 0.7256854176521301,
+                        "end": -1
+                    }
+                }
+            ],
+            "inertia": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "mass": 2.0
+        }
+    ],
+    "joints": [
+        {
+            "name": "hip_1",
+            "parent": "Torso",
+            "child": "Aux 1",
+            "parentOffset": {
+                "x": 0.2,
+                "y": 0.2
+            },
+            "childOffset": {
+                "x": -0.1,
+                "y": -0.1
+            },
+            "rotation": {
+                "y": -90.0
+            },
+            "angularDamping": 20.0,
+            "angleLimit": [
+                {
+                    "min": -30.0,
+                    "max": 30.0
+                }
+            ]
+        },
+        {
+            "name": "ankle_1",
+            "parent": "Aux 1",
+            "child": "Foot 1",
+            "parentOffset": {
+                "x": 0.1,
+                "y": 0.1
+            },
+            "childOffset": {
+                "x": -0.2,
+                "y": -0.2
+            },
+            "rotation": {
+                "z": 135.0
+            },
+            "angularDamping": 20.0,
+            "angleLimit": [
+                {
+                    "min": 30.0,
+                    "max": 70.0
+                }
+            ]
+        },
+        {
+            "name": "hip_2",
+            "parent": "Torso",
+            "child": "Aux 2",
+            "parentOffset": {
+                "x": -0.2,
+                "y": 0.2
+            },
+            "childOffset": {
+                "x": 0.1,
+                "y": -0.1
+            },
+            "rotation": {
+                "y": -90.0
+            },
+            "angularDamping": 20.0,
+            "angleLimit": [
+                {
+                    "min": -30.0,
+                    "max": 30.0
+                }
+            ]
+        },
+        {
+            "name": "ankle_2",
+            "parent": "Aux 2",
+            "child": "Foot 2",
+            "parentOffset": {
+                "x": -0.1,
+                "y": 0.1
+            },
+            "childOffset": {
+                "x": 0.2,
+                "y": -0.2
+            },
+            "rotation": {
+                "z": 45.0
+            },
+            "angularDamping": 20.0,
+            "angleLimit": [
+                {
+                    "min": -70.0,
+                    "max": -30.0
+                }
+            ]
+        },
+        {
+            "name": "hip_3",
+            "parent": "Torso",
+            "child": "Aux 3",
+            "parentOffset": {
+                "x": -0.2,
+                "y": -0.2
+            },
+            "childOffset": {
+                "x": 0.1,
+                "y": 0.1
+            },
+            "rotation": {
+                "y": -90.0
+            },
+            "angularDamping": 20.0,
+            "angleLimit": [
+                {
+                    "min": -30.0,
+                    "max": 30.0
+                }
+            ]
+        },
+        {
+            "name": "ankle_3",
+            "parent": "Aux 3",
+            "child": "Foot 3",
+            "parentOffset": {
+                "x": -0.1,
+                "y": -0.1
+            },
+            "childOffset": {
+                "x": 0.2,
+                "y": 0.2
+            },
+            "rotation": {
+                "z": 135.0
+            },
+            "angularDamping": 20.0,
+            "angleLimit": [
+                {
+                    "min": -70.0,
+                    "max": -30.0
+                }
+            ]
+        },
+        {
+            "name": "hip_4",
+            "parent": "Torso",
+            "child": "Aux 4",
+            "parentOffset": {
+                "x": 0.2,
+                "y": -0.2
+            },
+            "childOffset": {
+                "x": -0.1,
+                "y": 0.1
+            },
+            "rotation": {
+                "y": -90.0
+            },
+            "angularDamping": 20.0,
+            "angleLimit": [
+                {
+                    "min": -30.0,
+                    "max": 30.0
+                }
+            ]
+        },
+        {
+            "name": "ankle_4",
+            "parent": "Aux 4",
+            "child": "Foot 4",
+            "parentOffset": {
+                "x": 0.1,
+                "y": -0.1
+            },
+            "childOffset": {
+                "x": -0.2,
+                "y": 0.2
+            },
+            "rotation": {
+                "z": 45.0
+            },
+            "angularDamping": 20.0,
+            "angleLimit": [
+                {
+                    "min": 30.0,
+                    "max": 70.0
+                }
+            ]
+        }
+    ],
+    "actuators": [
+        {
+            "name": "hip_1",
+            "joint": "hip_1",
+            "strength": 350.0,
+            "torque": {}
+        },
+        {
+            "name": "ankle_1",
+            "joint": "ankle_1",
+            "strength": 350.0,
+            "torque": {}
+        },
+        {
+            "name": "hip_2",
+            "joint": "hip_2",
+            "strength": 350.0,
+            "torque": {}
+        },
+        {
+            "name": "ankle_2",
+            "joint": "ankle_2",
+            "strength": 350.0,
+            "torque": {}
+        },
+        {
+            "name": "hip_3",
+            "joint": "hip_3",
+            "strength": 350.0,
+            "torque": {}
+        },
+        {
+            "name": "ankle_3",
+            "joint": "ankle_3",
+            "strength": 350.0,
+            "torque": {}
+        },
+        {
+            "name": "hip_4",
+            "joint": "hip_4",
+            "strength": 350.0,
+            "torque": {}
+        },
+        {
+            "name": "ankle_4",
+            "joint": "ankle_4",
+            "strength": 350.0,
+            "torque": {}
+        }
+    ]
+}

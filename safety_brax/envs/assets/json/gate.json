@@ -1,0 +1,32 @@
+{
+    "bodies": [
+        {
+            "name": "Gate",
+            "colliders": [
+                {
+                    "mesh":{
+                        "name": "gate",
+                        "scale": 0.015
+                    },
+                    "color": "blue",
+                    "no_contact": true
+                }
+            ],
+            "inertia": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "mass": 1.0,
+            "frozen": {
+                "all": true
+            }
+        }
+    ],
+    "mesh_geometries": [
+        {
+        "name": "gate",
+        "path": "../safety_brax/envs/assets/mesh/flag.stl"
+      }
+    ]
+}

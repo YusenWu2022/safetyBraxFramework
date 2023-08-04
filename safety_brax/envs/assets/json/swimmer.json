@@ -1,0 +1,144 @@
+{
+    "bodies": [
+        {
+            "name": "Torso",
+            "colliders": [
+                {
+                    "capsule": {
+                        "radius": 0.05,
+                        "length": 1.0
+                    },
+                    "rotation": {
+                        "y": -90.0
+                    }
+                }
+            ],
+            "inertia": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "mass": 1.0
+        },
+        {
+            "name": "leg 1",
+            "colliders": [
+                {
+                    "capsule": {
+                        "radius": 0.05,
+                        "length": 1.0
+                    },
+                    "rotation": {
+                        "y": -90.0
+                    }
+                }
+            ],
+            "inertia": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "mass": 1.0
+        },
+        {
+            "name": "leg 2",
+            "colliders": [
+                {
+                    "capsule": {
+                        "radius": 0.05,
+                        "length": 1.0
+                    },
+                    "rotation": {
+                        "y": -90.0
+                    }
+                }
+            ],
+            "inertia": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "mass": 1.0
+        }
+    ],
+    "joints": [
+        {
+            "name": "Torso2leg 1",
+            "parent": "Torso",
+            "child": "leg 1",
+            "parentOffset": {
+                "x": 0.5
+            },
+            "childOffset": {
+                "x": -0.5
+            },
+            "rotation": {
+                "y": -90.0
+            },
+            "angularDamping": 10.0,
+            "reference_rotation": {},
+            "angleLimit": [
+                {
+                    "min": -100.0,
+                    "max": 100.0
+                }
+            ]
+        },
+        {
+            "name": "Torso2leg 2",
+            "parent": "leg 1",
+            "child": "leg 2",
+            "parentOffset": {
+                "x": 0.5
+            },
+            "childOffset": {
+                "x": -0.5
+            },
+            "rotation": {
+                "y": -90.0
+            },
+            "angularDamping": 10.0,
+            "reference_rotation": {},
+            "angleLimit": [
+                {
+                    "min": -100.0,
+                    "max": 100.0
+                }
+            ]
+        }
+    ],
+    "forces": [
+        {
+            "name": "leg_1_thruster",
+            "body": "leg 1",
+            "strength": 4.0,
+            "thruster": {}
+        },
+        {
+            "name": "leg_2_thruster",
+            "body": "leg 2",
+            "strength": 4.0,
+            "thruster": {}
+        },
+        {
+            "name": "Torso_thruster",
+            "body": "Torso",
+            "strength": 4.0,
+            "thruster": {}
+        }
+    ],
+    "actuators": [
+        {
+            "name": "leg 1 rotor",
+            "joint": "Torso2leg 1",
+            "strength": 30.0,
+            "torque": {}
+        },
+        {
+            "name": "leg 2 rotor",
+            "joint": "Torso2leg 2",
+            "strength": 30.0,
+            "torque": {}
+        }
+    ]
+}

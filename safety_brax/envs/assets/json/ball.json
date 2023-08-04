@@ -1,0 +1,28 @@
+{
+    "bodies": [
+        {
+            "name": "Torso",
+            "colliders": [
+                {
+                    "sphere": {
+                        "radius": 0.25
+                    }
+                }
+            ],
+            "inertia": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "mass": 10.0
+        }
+    ],
+    "forces": [
+        {
+            "name": "push",
+            "body": "Torso",
+            "strength": 40.0,
+            "thruster": {}
+        }
+    ]
+}

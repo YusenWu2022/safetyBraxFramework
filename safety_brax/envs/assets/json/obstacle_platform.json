@@ -1,0 +1,33 @@
+{
+    "bodies": [
+        {
+            "name": "Obstacle_platform",
+            "colliders": [
+                {
+                    "mesh": {
+                        "name": "flat_platform",
+                        "scale": 1.0
+                    },
+                    "color": "blue"
+                }
+            ],
+            "inertia": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "mass": 1.0,
+            "frozen": {
+                "position": {
+                    "z": 0.0
+                }
+            }
+        }
+    ],
+    "meshGeometries": [
+        {
+            "name": "flat_platform",
+            "path": "../safety_brax/envs/assets/mesh/flat_thin_circle.stl"
+        }
+    ]
+}
